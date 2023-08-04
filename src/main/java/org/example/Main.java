@@ -17,8 +17,9 @@ public abstract class Main {
         ejercicio5();
         ejercicio6();
         ejercicio7();
-        ejercicio8();
+        System.out.println(ejercicio8());
         ejercicio9();
+        System.out.println(ejercicio10());
         System.out.println(ejercicio11());
 
 
@@ -96,26 +97,23 @@ public abstract class Main {
         pair = read.nextInt();
         System.out.println(apair(pair));
     }
-    public static void ejercicio8(){
+    public static String ejercicio8(){
         int primo, i;
         Scanner read = new Scanner(System.in);
         System.out.println("ingrese un numero primo");
         primo= read.nextInt();
         double div;
-        String warn="a";
-
+        String warn;
+        warn=("el numero es primo");
         for(i=2; i<primo; i++){
             div=primo%i;
             if(div==0){
                 warn="el numero no es primo";
 
-            }else{
-                warn="bien hecho ;)";
-
             }
-            System.out.println(warn);
-        }
 
+        }
+        return warn;
     }
 
 
@@ -126,6 +124,38 @@ public abstract class Main {
             numbers1.add(i);
         }
         System.out.println(sum((ArrayList) numbers1));
+    }
+    public static String ejercicio10() {
+        ArrayList<Integer> numeros10 = new ArrayList<>();
+        int i, j;
+        int pares, primo10, primos10;
+        primos10=0;
+        int div;
+        for (i = 1; i < 10; i++) {
+            numeros10.add(i);
+        }
+        for (i = 1; i < numeros10.size(); i++) {
+
+            if (numeros10.get(i) % 2 == 0) {
+                System.out.println("numero par: ");
+                System.out.println(numeros10.get(i));
+            }
+        }
+
+        for (i = 0; i < numeros10.size(); i++) {
+            primo10=numeros10.get(i);
+            for (j = 2; j < numeros10.get(i); j++) {
+
+                div = numeros10.get(i) % j;
+                if (div== 0) {
+                    primo10=0;
+                }
+
+            }
+            primos10+=primo10;
+        }
+
+        return ("la suma de los numeros primos es "+primos10);
     }
     public static String ejercicio11() {
         String op, answer;
@@ -169,6 +199,7 @@ public abstract class Main {
         }
         return answer;
     }
+    //El ejercicio 11 incluye al 12
     public static String welcomef(String wellcome) {
 
         return wellcome;
